@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+}
+body,html{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+    color: #000;
+    font-size: 16px;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+/*per avere immagine responsive e farle occupare la larghezza che abbiamo stabilito noi*/
+.img-res{
+    width: 100%;
+    height: auto;
+}
+
+h1, h2, h3{
+    color: #333;
+}
+
+.container{
+    padding: 15px;
+    max-width: 1300px; /*per bloccare allargamento sito fino ad una certa larghezza*/
+    margin: 0 auto; /*per centrare sito in maniera responsive*/
+}
+
+#menu-main{
+    text-align: center;
+}
+/*selettore combinato*/
+#menu-main li{
+    display: inline; /*voci allineate su asse verticale*/
+}
+#menu-main li a{
+    margin: 10px;
+}
+
+.cover{
+    position: relative;
+}
+.cover__content{
+    /* border: 4px solid green; */
+    border-bottom: 10px solid #D05F03;
+    background: yellow;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 100px 20px 20px 20px; /*per rendere ancora più leggibile il testo sopra img*/
+    /* tramite css gradient generator */
+    background:rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+
+.cover__content p, .cover__content h1{
+    color: #fff;
+}
+
+header{
+    background: #fff;
+    padding: 25px 15px 5px 15px;
+    width: 100%;
+}
+.logo{
+    /* text-align: center;questo non funziona da solo perchè ho un tag di tipo link */
+    width: 100%;
+    display: block;
+    font-size: 20px;
+}
+
+
+.grid{
+    display: flex;
+    flex-wrap: wrap; /*se una colonna è più lunga dello spazio disponibile vai pure a capo*/
+}
+
+.col-33{
+    border: 1px solid green;
+    width: 33%;
+    padding: 15px;
+}
+/*usata per eseguire codice su schermi grandi al massimo 768px ovvero SMARTPHONE*/
+@media (max-width: 768px) {
+
+    .col-33{
+        width: 100%; /*per mettere ogni colonna singola per blocco*/
+    }
+    .cover h1{
+        font-size: 25px;
+    }
+    /*per modificare la grandezza della cover in visualizzazione smartphone*/
+    .cover img{
+        height: 300px;
+        object-fit: cover; /*per evitare che immagine venga sformata*/
+    }
+}
+/*funzionante per schermi di tablet*/
+@media (min-width: 768px) and (max-width:1023px){
+    h1{
+        color: red
+    }
+}
+/*media query su schermi grandi*/
+@media (min-width: 1300px) {
+    h1{
+        font-size: 70px;
+    }
+}
+
+.frase{
+    
+    font-size: 25px;
+    font-weight: bold;
+    color: #D05F03;
+}
